@@ -21,14 +21,18 @@ import DrawerContactos from "./DeawerContactos";
 import ImagenCompensar from "./imagenCompensarInicio";
 import ImagenCompensarMenu from "./ImagenMenuCompensar";
 import Avatar from "@mui/material/Avatar";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import RutasDrawer from "../Router/RutasDrawer";
 import FolderSpecialIcon from '@mui/icons-material/FolderSpecial';
 import ParticlesContainer from "./Puntos";
+import BookIcon from '@mui/icons-material/Book';
+import { NavLink } from 'react-router-dom';
+import { useState } from "react";
 
 
 const drawerWidth = 240;
-const links = ["Home","Estudiante","Inicio", "Notas",]
+const links = ["Home","Estudiantes","Consultar_Estudiante","Agregar_colegio","Consultar_Coleguios"
+,]
 
 const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })<{
   open?: boolean;
@@ -88,7 +92,9 @@ export default function PersistentDrawerStiven() {
 
 
   //
-
+  const location = useLocation();
+  const [selectedLink, setSelectedLink] = useState<string | null>(null);
+  const drawerWidth = 300;
 
   return (
     <Box sx={{ display: "flex" }}>
@@ -152,30 +158,35 @@ export default function PersistentDrawerStiven() {
         <ImagenCompensarMenu />
 
         <Divider />
-
         <List>
-          {links.map((text, index) => {
-            return (
-              <ListItem key={text} disablePadding>
-                <ListItemButton>
-                  <ListItemIcon>
-                    {index % 2 === 0 ? <FolderSpecialIcon /> : <FolderSpecialIcon />}
-                  </ListItemIcon>
-                  <Link to={`/${text.toLowerCase()}`}>
-                    <ListItemText primary={text.toUpperCase()} />
-                  </Link>
-                </ListItemButton>
-              </ListItem>
-            )
-          })}
-        </List>
+  {links.map((text, index) => (
+    <NavLink 
+      to={`/${text.toLowerCase()}`} 
+      key={text}
+      style={{ textDecoration: 'none', color: 'inherit' }}
+      onClick={() => setSelectedLink(text.toLowerCase())}
+    >
+      <ListItem disablePadding selected={selectedLink === text.toLowerCase()}>
+        <ListItemButton sx={selectedLink === text.toLowerCase() ? { backgroundColor: "#FF9142", m: 1 } : {}}>
+          <ListItemIcon>
+            <BookIcon />
+          </ListItemIcon>
+          <ListItemText primary={text.toUpperCase()} />
+        </ListItemButton>
+      </ListItem>
+    </NavLink>
+  ))}
+</List>
+
+
+
         <Divider />
         <List>
           {[].map((text, index) => (
             <ListItem key={text} disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-                  {index % 2 === 0 ? <FolderSpecialIcon /> : <FolderSpecialIcon />}
+                  {index % 2 === 0 ? <BookIcon /> : <BookIcon />}
                 </ListItemIcon>
                 <ListItemText primary={text} />
               </ListItemButton>

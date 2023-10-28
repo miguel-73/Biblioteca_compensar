@@ -2,47 +2,26 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Box, Grid, TextField, Typography } from "@mui/material";
-import {  titulo } from "../commons/interface";
-import { DataGrid, GridColDef } from "@mui/x-data-grid";
-import React, { useEffect, useState } from 'react';
-import axios from "axios";
-import { Button } from "primereact/button";
-
-export const miEstilo = {
-    position: 'relative',
-    background: '#FAFAFA',
-    borderRadius: '15px',
-    p: '20px',
-    m: '10px 0 20px 0',
-    mb: '20px',
-    boxShadow: '0px 3px 6px #042F4A26',
-};
+import { miEstilo, titulo } from "../commons/interface";
+import { DataGrid } from "@mui/x-data-grid";
+import { useEffect, useState } from 'react';
 
 
-interface Estudiante {
+interface Colegio {
     id: number;
-    cod_tipo_documento: string;
-    numero_identidad: string;
-    primer_nombre: string;
-    segundo_nombre: string;
-    primer_apellido: string;
-    segundo_apellido: string;
-    edad: number;
-    fecha_nacimiento: string;
+    nombre_colegio: string;
+    direccion: string;
+    telefono_contacto: string;
     correo_electronico: string;
-    numero_celular: string;
-    pertenece_colegio: boolean;
-    pertenece_universidad: boolean;
-    id_universidad: number;
-    id_grado: number;
-    colegio: any;
-}
-export default function ConsultarEstudiante() {
-    const [estudiantes, setEstudiantes] = useState<Estudiante[]>([]);
+    cod_departamento: string;
+    cod_municipio: string;
+  }
+export default function Consultar_Coleguios() {
+    const [estudiantes, setEstudiantes] = useState<Colegio[]>([]);
 
     const fetchEstudiantes = async (): Promise<any> => {
         try {
-            const respuesta = await fetch('https://zg3gr5k0-8000.use2.devtunnels.ms/estudiantes/obtener_estudiante/');
+            const respuesta = await fetch('https://zg3gr5k0-8000.use2.devtunnels.ms/estudiantes/obtener_coleguio/');
 
 
             if (respuesta.ok) {
@@ -62,21 +41,22 @@ export default function ConsultarEstudiante() {
         void fetchEstudiantes();
      }, []); 
 
-    const columnas = [
+     const columnas = [
         // { field: 'id', headerName: 'ID', width: 90 },
-        { field: 'primer_nombre', headerName: 'Primer nombre', width: 200 },
-        { field: 'segundo_nombre', headerName: 'Segundo nombre', width: 200 },
-        { field: 'primer_apellido', headerName: 'Primer apellido', width: 200 },
-        { field: 'edad', headerName: 'edad', width: 200 },
-        { field: 'numero_celular', headerName: 'numero_celular', width: 200 },
-
+        { field: 'nombre_colegio', headerName: 'Nombre Colegio', width: 200 },
+        { field: 'direccion', headerName: 'Dirección', width: 200 },
+        { field: 'telefono_contacto', headerName: 'Teléfono de Contacto', width: 200 },
+        { field: 'correo_electronico', headerName: 'Correo Electrónico', width: 200 },
+        // { field: 'cod_departamento', headerName: 'Código Departamento', width: 200 },
+        // { field: 'cod_municipio', headerName: 'Código Municipio', width: 200 },
+      
         // Añade aquí más columnas según necesites
-    ];
+      ];
     const [filtro, setFiltro] = useState('');
     const estudiantesFiltrados = estudiantes.filter(estudiante => 
-        estudiante.primer_nombre.toLowerCase().includes(filtro.toLowerCase()) ||
-        estudiante.segundo_nombre.toLowerCase().includes(filtro.toLowerCase()) ||
-        estudiante.primer_apellido.toLowerCase().includes(filtro.toLowerCase())
+        estudiante.nombre_colegio.toLowerCase().includes(filtro.toLowerCase()) ||
+        estudiante.correo_electronico.toLowerCase().includes(filtro.toLowerCase()) ||
+        estudiante.telefono_contacto.toLowerCase().includes(filtro.toLowerCase())
     );
     return (
         <>  
@@ -89,14 +69,14 @@ export default function ConsultarEstudiante() {
                         className={`border px-4 text-white fs-5 p-1`}
                         sx={titulo}
                     >
-                        <Typography>Estudiantes  </Typography>
+                        <Typography>Colegios   </Typography>
                     </Box>
                 </Grid>
 
                 <Grid item xs={12} sm={3}>
                     <TextField 
                         fullWidth 
-                        label="Buscar por nombre o apellido" 
+                        label="Buscar por nombre o correo " 
                         variant="outlined" 
                         size="small"
                         onChange={e => setFiltro(e.target.value)} 

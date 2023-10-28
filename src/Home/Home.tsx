@@ -1,52 +1,125 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Grid } from "@mui/material";
+import Logou from "../Drawer/logou";
 
-import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+
+
+
+
+
+
+
 
 export default function Home() {
     const miEstilo = {
         position: 'relative',
-        background: '#FAFAFA',
+        // background: '#FAFAFA',
         borderRadius: '15px',
         p: '20px',
         m: '10px 0 20px 0',
         mb: '20px',
         boxShadow: '0px 3px 6px #042F4A26',
     };
-    const VisuallyHiddenInput = styled('input')({
-        clip: 'rect(0 0 0 0)',
-        clipPath: 'inset(50%)',
-        height: 1,
-        overflow: 'hidden',
-        position: 'absolute',
-        bottom: 0,
-        left: 0,
-        whiteSpace: 'nowrap',
-        width: 1,
-    });
-    const titulo = {
+   
 
-        display: 'grid',
-        background:
-            'transparent linear-gradient(269deg, #1492E6 0%, #062F48 34%, #FF9142 100%) 0% 0% no-repeat padding-box',
-        width: '100%',
-        height: '40px',
-        color: '#fff',
-        borderRadius: '10px',
-        pl: '20px',
-        fontSize: '17px',
-        fontWeight: '900',
-        alignContent: 'center',
-        marginTop: '10px',
-    };
+
     return (
         <>
             <Grid container
                 spacing={2} m={2} p={2}
                 sx={miEstilo}
             >
+                <Logou />
+            </Grid>
+            <Grid container
+                spacing={2} m={2} p={2}
+                sx={miEstilo}
+            >
+
+                <Grid item xs={12} sm={4}>
+                    <Card sx={{ minWidth: 275 }}>
+                        <CardContent>
+                            <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                                Ing en sistemas
+                            </Typography>
+                            <Typography variant="h5" component="div">
+                                Jhon Fredy Bermudez Rivera
+                            </Typography>
+                            <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                                Modelado de Datos
+                            </Typography>
+                            <Typography variant="body2">
+                                Database Design
+                                <br />
+
+                                {/* {'"a benevolent smile"'} */}
+                            </Typography>
+                        </CardContent>
+                        <CardActions>
+                            <Button size="small">Estudiante</Button>
+                        </CardActions>
+                    </Card>
+                </Grid>
+
+                {/*  */}
+
+                <Grid item xs={12} sm={4}>
+                    <Card sx={{ minWidth: 275 }}>
+                        <CardContent>
+                            <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                                Ing en sistemas
+                            </Typography>
+                            <Typography variant="h5" component="div">
+                                Hector Stiven Vigoya
+                            </Typography>
+                            <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                                Back
+                            </Typography>
+                            <Typography variant="body2">
+                                server-side
+                                <br />
+                                {/* {'"a benevolent smile"'} */}
+                            </Typography>
+                        </CardContent>
+                        <CardActions>
+                            <Button size="small" >Estudiante</Button>
+                        </CardActions>
+                    </Card>
+                </Grid>
 
 
+
+
+
+                <Grid item xs={12} sm={4}>
+                    <Card sx={{ minWidth: 275 }}>
+                        <CardContent>
+                            <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                                Ing en sistemas
+                            </Typography>
+                            <Typography variant="h5" component="div">
+                                Miguel Angel Murcia Ocampo
+                            </Typography>
+                            <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                                Desarrollador front end
+                            </Typography>
+                            <Typography variant="body2">
+                                Diseño Web
+                                <br />
+                                {/* {'"a benevolent smile"'} */}
+                            </Typography>
+                        </CardContent>
+                        <CardActions>
+                            <Button size="small">Estudiante</Button>
+                        </CardActions>
+                    </Card>
+                </Grid>
 
             </Grid>
         </>

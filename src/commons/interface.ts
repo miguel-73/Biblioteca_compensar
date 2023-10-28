@@ -22,3 +22,4 @@ export const miEstilo = {
     mb: '20px',
     boxShadow: '0px 3px 6px #042F4A26',
 };
+
