@@ -20,10 +20,7 @@ import ListItemText from "@mui/material/ListItemText";
 import DrawerContactos from "./DeawerContactos";
 import ImagenCompensar from "./imagenCompensarInicio";
 import ImagenCompensarMenu from "./ImagenMenuCompensar";
-import Avatar from "@mui/material/Avatar";
-import { Link, useLocation } from 'react-router-dom';
-import RutasDrawer from "../Router/RutasDrawer";
-import FolderSpecialIcon from '@mui/icons-material/FolderSpecial';
+import { useLocation } from 'react-router-dom';
 import ParticlesContainer from "./Puntos";
 import BookIcon from '@mui/icons-material/Book';
 import { NavLink } from 'react-router-dom';
@@ -31,8 +28,8 @@ import { useState } from "react";
 
 
 const drawerWidth = 240;
-const links = ["Home","Estudiantes","Consultar_Estudiante","Agregar_colegio","Consultar_Coleguios"
-,]
+const links = ["Home", "Estudiantes", "Agregar_colegio", "Consultar_Coleguios"
+  ,]
 
 const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })<{
   open?: boolean;
@@ -127,7 +124,7 @@ export default function PersistentDrawerStiven() {
               right: 15,
               border: 0,
             }}
-          > 
+          >
             <DrawerContactos />
           </Box>
         </Toolbar>
@@ -159,24 +156,24 @@ export default function PersistentDrawerStiven() {
 
         <Divider />
         <List>
-  {links.map((text, index) => (
-    <NavLink 
-      to={`/${text.toLowerCase()}`} 
-      key={text}
-      style={{ textDecoration: 'none', color: 'inherit' }}
-      onClick={() => setSelectedLink(text.toLowerCase())}
-    >
-      <ListItem disablePadding selected={selectedLink === text.toLowerCase()}>
-        <ListItemButton sx={selectedLink === text.toLowerCase() ? { backgroundColor: "#FF9142", m: 1 } : {}}>
-          <ListItemIcon>
-            <BookIcon />
-          </ListItemIcon>
-          <ListItemText primary={text.toUpperCase()} />
-        </ListItemButton>
-      </ListItem>
-    </NavLink>
-  ))}
-</List>
+          {links.map((text, index) => (
+            <NavLink
+              to={`/${text.toLowerCase()}`}
+              key={text}
+              style={{ textDecoration: 'none', color: 'inherit' }}
+              onClick={() => setSelectedLink(text.toLowerCase())}
+            >
+              <ListItem disablePadding selected={selectedLink === text.toLowerCase()}>
+                <ListItemButton sx={selectedLink === text.toLowerCase() ? { backgroundColor: "#FF9142", m: 1 } : {}}>
+                  <ListItemIcon>
+                    <BookIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={text.toUpperCase()} />
+                </ListItemButton>
+              </ListItem>
+            </NavLink>
+          ))}
+        </List>
 
 
 
@@ -196,11 +193,11 @@ export default function PersistentDrawerStiven() {
       </Drawer>
       <Main open={open}>
         <DrawerHeader />
-        
-        <ParticlesContainer/>
 
-          {/* <RutasDrawer /> */}
-        
+        <ParticlesContainer />
+
+        {/* <RutasDrawer /> */}
+
 
       </Main>
     </Box>

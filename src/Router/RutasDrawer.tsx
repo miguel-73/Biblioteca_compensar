@@ -4,9 +4,6 @@ import { Routes, Route } from 'react-router-dom'
 import FotoPerfilStudiante from '../Inicio-drawer/DatosPersonales';
 import Notas from '../MG/Notas';
 import Home from '../Home/Home';
-import Estudiante from '../estudiantes/Estudiantes';
-import CrearPersona from '../CrearPersona/CrearPersona';
-import Tablacolegios from '../colegios/Tablacolegios';
 import Agregar_univercidad from '../Agregar_univercidad/Agregar_univercidad';
 import Categotia from '../categoria/categotia';
 import Estudiantes from '../CrearPersona/CrearPersona';

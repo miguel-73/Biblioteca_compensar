@@ -7,6 +7,7 @@ import SaveIcon from '@mui/icons-material/Save';
 // import { control_success } from "../commons/alertas";
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 import { useSnackbar } from 'notistack';
+import ConsultarEstudiante from "../estudiantes/Estudiantes";
 
 
 interface Colegio {
@@ -26,7 +27,7 @@ export default function Estudiantes() {
     const initialFormData = {
         cod_tipo_documento: "cc",
         numero_identidad: "",
-        primer_nombre: " ",
+        primer_nombre: "",
 
         segundo_nombre: "",
         primer_apellido: "",
@@ -108,7 +109,7 @@ export default function Estudiantes() {
 
     const handleChange = (event: { target: { value: string; }; }) => {
         const value = event.target.value as string;
-        setFormData({ ...formData, colegio : value });
+        setFormData({ ...formData, colegio: value });
         setColegioSeleccionado(value);
     };
     return (
@@ -131,6 +132,9 @@ export default function Estudiantes() {
 
                 <Grid item xs={12} sm={3}>
                     <TextField
+                        InputProps={{
+                            style: { borderRadius: 50 } // Aquí puedes ajustar el valor según tus necesidades
+                        }}
                         variant="outlined"
                         size="small"
                         required
@@ -139,25 +143,35 @@ export default function Estudiantes() {
                         name="numero_identidad"
                         value={formData.numero_identidad}
                         onChange={handleInputChange}
+                        color="warning"
+
                     />
                 </Grid>
 
                 <Grid item xs={12} sm={3}>
                     <TextField
+                        InputProps={{
+                            style: { borderRadius: 50 } // Aquí puedes ajustar el valor según tus necesidades
+                        }}
+                        color="warning"
                         variant="outlined"
                         size="small"
                         required
                         fullWidth
-                        label="Primer Nombre"
+                        label="primer nombre"
                         name="primer_nombre"
                         value={formData.primer_nombre}
                         onChange={handleInputChange}
+
                     />
                 </Grid>
 
 
                 <Grid item xs={12} sm={3}>
                     <TextField
+                        InputProps={{
+                            style: { borderRadius: 50 } // Aquí puedes ajustar el valor según tus necesidades
+                        }}
                         variant="outlined"
                         size="small"
                         required
@@ -166,12 +180,16 @@ export default function Estudiantes() {
                         name="segundo_nombre"
                         value={formData.segundo_nombre}
                         onChange={handleInputChange}
+                        color="warning"
                     />
                 </Grid>
 
 
                 <Grid item xs={12} sm={3}>
                     <TextField
+                        InputProps={{
+                            style: { borderRadius: 50 } // Aquí puedes ajustar el valor según tus necesidades
+                        }}
                         variant="outlined"
                         size="small"
                         required
@@ -180,10 +198,14 @@ export default function Estudiantes() {
                         name="primer_apellido"
                         value={formData.primer_apellido}
                         onChange={handleInputChange}
+                        color="warning"
                     />
                 </Grid>
                 <Grid item xs={12} sm={3}>
                     <TextField
+                        InputProps={{
+                            style: { borderRadius: 50 } // Aquí puedes ajustar el valor según tus necesidades
+                        }}
                         variant="outlined"
                         size="small"
                         required
@@ -192,11 +214,15 @@ export default function Estudiantes() {
                         name="segundo_apellido"
                         value={formData.segundo_apellido}
                         onChange={handleInputChange}
+                        color="warning"
                     />
                 </Grid>
 
                 <Grid item xs={12} sm={3}>
                     <TextField
+                        InputProps={{
+                            style: { borderRadius: 50 } // Aquí puedes ajustar el valor según tus necesidades
+                        }}
                         variant="outlined"
                         size="small"
                         required
@@ -205,11 +231,15 @@ export default function Estudiantes() {
                         name="edad"
                         value={formData.edad}
                         onChange={handleInputChange}
+                        color="warning"
                     />
                 </Grid>
 
                 <Grid item xs={12} sm={3}>
                     <TextField
+                        InputProps={{
+                            style: { borderRadius: 50 } // Aquí puedes ajustar el valor según tus necesidades
+                        }}
                         variant="outlined"
                         size="small"
                         required
@@ -218,10 +248,14 @@ export default function Estudiantes() {
                         name="fecha_nacimiento"
                         value={formData.fecha_nacimiento}
                         onChange={handleInputChange}
+                        color="warning"
                     />
                 </Grid>
                 <Grid item xs={12} sm={3}>
                     <TextField
+                        InputProps={{
+                            style: { borderRadius: 50 } // Aquí puedes ajustar el valor según tus necesidades
+                        }}
                         variant="outlined"
                         size="small"
                         required
@@ -230,11 +264,15 @@ export default function Estudiantes() {
                         name="correo_electronico"
                         value={formData.correo_electronico}
                         onChange={handleInputChange}
+                        color="warning"
                     />
                 </Grid>
 
                 <Grid item xs={12} sm={3}>
                     <TextField
+                        InputProps={{
+                            style: { borderRadius: 50 } // Aquí puedes ajustar el valor según tus necesidades
+                        }}
                         variant="outlined"
                         size="small"
                         required
@@ -243,6 +281,7 @@ export default function Estudiantes() {
                         name="numero_celular"
                         value={formData.numero_celular}
                         onChange={handleInputChange}
+                        color="warning"
                     />
                 </Grid>
                 {/* Agrega más campos del formulario según sea necesario */}
@@ -251,12 +290,15 @@ export default function Estudiantes() {
                     <FormControl variant="outlined" size="small" required fullWidth>
                         <InputLabel id="pertenece-colegio-label">¿Pertenece al colegio?</InputLabel>
                         <Select
+
                             labelId="pertenece-colegio-label"
                             id="pertenece-colegio"
                             label="¿Pertenece al colegio?"
                             name="pertenece_colegio"
                             value={formData.pertenece_colegio}
                             onChange={handleInputChange}
+                            color="warning"
+                            sx={{ borderRadius: 20 }}
                         >
                             <MenuItem value={"true"}>Sí</MenuItem>
                             <MenuItem value={"false"}>No</MenuItem>
@@ -273,6 +315,8 @@ export default function Estudiantes() {
                             name="pertenece_universidad"
                             value={formData.pertenece_universidad}
                             onChange={handleInputChange}
+                            color="warning"
+                            sx={{ borderRadius: 20 }}
                         >
                             <MenuItem value={"true"}>Sí</MenuItem>
                             <MenuItem value={"false"}>No</MenuItem>
@@ -289,7 +333,8 @@ export default function Estudiantes() {
                             id="colegio"
                             value={formData.colegio}
                             label="colegio"
-
+                            color="warning"
+                            sx={{ borderRadius: 20 }}
                             onChange={handleChange}
                         >
                             {colegios.map((colegio) => (
@@ -328,12 +373,14 @@ export default function Estudiantes() {
                 </Grid> */}
                 <Grid item xs={12} sm={3}>
                     <Button color='success' fullWidth startIcon={<SaveIcon />}
-                        variant='contained' onClick={handleSubmit}>
+                        variant='contained' onClick={handleSubmit} sx={{ borderRadius: 20 }} >
                         Guardat Estudiante
                     </Button>
                 </Grid>
 
             </Grid>
+
+            <ConsultarEstudiante />
         </>
     );
 }

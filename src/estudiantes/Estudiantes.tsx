@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Box, Grid, TextField, Typography } from "@mui/material";
-import {  titulo } from "../commons/interface";
+import { titulo } from "../commons/interface";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
@@ -58,9 +58,9 @@ export default function ConsultarEstudiante() {
         }
     };
 
-     useEffect(() => {
+    useEffect(() => {
         void fetchEstudiantes();
-     }, []); 
+    }, []);
 
     const columnas = [
         // { field: 'id', headerName: 'ID', width: 90 },
@@ -73,13 +73,13 @@ export default function ConsultarEstudiante() {
         // Añade aquí más columnas según necesites
     ];
     const [filtro, setFiltro] = useState('');
-    const estudiantesFiltrados = estudiantes.filter(estudiante => 
+    const estudiantesFiltrados = estudiantes.filter(estudiante =>
         estudiante.primer_nombre.toLowerCase().includes(filtro.toLowerCase()) ||
         estudiante.segundo_nombre.toLowerCase().includes(filtro.toLowerCase()) ||
         estudiante.primer_apellido.toLowerCase().includes(filtro.toLowerCase())
     );
     return (
-        <>  
+        <>
             <Grid container
                 spacing={2} m={2} p={2}
                 sx={miEstilo}
@@ -94,12 +94,16 @@ export default function ConsultarEstudiante() {
                 </Grid>
 
                 <Grid item xs={12} sm={3}>
-                    <TextField 
-                        fullWidth 
-                        label="Buscar por nombre o apellido" 
-                        variant="outlined" 
+                    <TextField
+                        InputProps={{
+                            style: { borderRadius: 50 } // Aquí puedes ajustar el valor según tus necesidades
+                        }}
+                        color="warning"
+                        fullWidth
+                        label="Buscar por nombre o apellido"
+                        variant="outlined"
                         size="small"
-                        onChange={e => setFiltro(e.target.value)} 
+                        onChange={e => setFiltro(e.target.value)}
                         value={filtro}
                         style={{ marginBottom: '16px' }}
                     />
@@ -107,14 +111,14 @@ export default function ConsultarEstudiante() {
 
 
                 <Grid item xs={12} sm={12}>
-                        <DataGrid
-                            autoHeight
-                            density="compact"
-                            rows={estudiantesFiltrados}
-                            columns={columnas}
-                        />
+                    <DataGrid
+                        autoHeight
+                        density="compact"
+                        rows={estudiantesFiltrados}
+                        columns={columnas}
+                    />
                 </Grid>
-              
+
 
             </Grid>
         </>

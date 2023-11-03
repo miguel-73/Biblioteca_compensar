@@ -139,6 +139,10 @@ export default function Agregar_univercidad() {
 
                 <Grid item xs={12} sm={3}>
                     <TextField
+                     InputProps={{
+                        style: { borderRadius: 50 } // Aquí puedes ajustar el valor según tus necesidades
+                    }}
+                    color="warning"
                         variant="outlined"
                         size="small"
                         required
@@ -152,6 +156,10 @@ export default function Agregar_univercidad() {
 
                 <Grid item xs={12} sm={3}>
                     <TextField
+                     InputProps={{
+                        style: { borderRadius: 50 } // Aquí puedes ajustar el valor según tus necesidades
+                    }}
+                    color="warning"
                         variant="outlined"
                         size="small"
                         required
@@ -164,11 +172,15 @@ export default function Agregar_univercidad() {
                 </Grid>
                 <Grid item xs={12} sm={3}>
                     <TextField
+                     InputProps={{
+                        style: { borderRadius: 50 } // Aquí puedes ajustar el valor según tus necesidades
+                    }}
+                    color="warning"
                         variant="outlined"
                         size="small"
                         required
                         fullWidth
-                        label="Telefono_contacto"
+                        label="Telefono contacto"
                         name="telefono_contacto"
                         value={formData.telefono_contacto}
                         onChange={handleInputChange}
@@ -176,6 +188,10 @@ export default function Agregar_univercidad() {
                 </Grid>
                 <Grid item xs={12} sm={3}>
                     <TextField
+                     InputProps={{
+                        style: { borderRadius: 50 } // Aquí puedes ajustar el valor según tus necesidades
+                    }}
+                    color="warning"
                         variant="outlined"
                         size="small"
                         required
@@ -197,6 +213,8 @@ export default function Agregar_univercidad() {
                             label="Departamento"
                             onChange={handleInputChange}
                             name="cod_departamento"
+                            color="warning"
+                            sx={{ borderRadius: 20 }} 
                         >
                             {departamentos.map((departamento) => (
                                 <MenuItem key={departamento.value} value={departamento.value}>
@@ -210,14 +228,16 @@ export default function Agregar_univercidad() {
 
                 <Grid item xs={12} sm={3}>
                     <FormControl variant="outlined" size="small" required fullWidth >
-                        <InputLabel id="departamento-label">Municipio</InputLabel>
+                        <InputLabel  >Municipio</InputLabel>
                         <Select
-                            labelId="departamento-label"
-                            id="departamento"
+                            // labelId="departamento-label"
+                            // id="departamento"
                             value={formData.cod_municipio}
                             label="Departamento"
                             onChange={handleInputChange}
                             name="cod_municipio"
+                            color="warning"
+                            sx={{ borderRadius: 20 }} 
                         >
                             {municipio.map((municipio) => (
                                 <MenuItem key={municipio.value} value={municipio.value}>
@@ -230,7 +250,7 @@ export default function Agregar_univercidad() {
 
                 <Grid item xs={12} sm={3}>
                     <Button color='success' fullWidth startIcon={<SaveIcon />}
-                        variant='contained' onClick={handleSubmit}>
+                        variant='contained' onClick={handleSubmit}  sx={{ borderRadius: 20 }}  >
                         Guardar Estudiante
                     </Button>
                 </Grid>
