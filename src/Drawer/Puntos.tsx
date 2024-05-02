@@ -26,7 +26,7 @@ const ParticlesContainer: React.FC = () => {
             value: "",
           },
         },
-        fpsLimit: 120,
+        fpsLimit: 100,
         interactivity: {
           events: {
             onClick: {
@@ -55,7 +55,7 @@ const ParticlesContainer: React.FC = () => {
           },
           links: {
             color: "#f5d393",
-            distance: 150,
+            distance: 100,
             enable: true,
             opacity: 0.5,
             width: 1,
@@ -78,7 +78,7 @@ const ParticlesContainer: React.FC = () => {
               enable: true,
               area: 300,
             },
-            value: 100,
+            value: 90,
           },
           opacity: {
             value: 3,

@@ -11,6 +11,9 @@ import SaveIcon from '@mui/icons-material/Save';
 // import { control_success } from "../commons/alertas";
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 import { useSnackbar } from 'notistack';
+import Cuento1 from "../Drawer/Cuento1";
+import Cuento2 from "../Drawer/Cuento2";
+import Cuento3, { Imagenes1, Imagenes2, Imagenes3, Imagenes4, Imagenes5, Imagenes6, Imagenes7, Imagenes8 } from "../Drawer/Cuento3";
 
 
 
@@ -101,7 +104,7 @@ export default function Agregar_univercidad() {
 
     const [municipio, setMunicipio] = useState<Municipio[]>([]);
     useEffect(() => {
-        const cargarDepartamentos= async (): Promise<any> => {
+        const cargarDepartamentos = async (): Promise<any> => {
             try {
                 const respuesta = await fetch(`https://back-end-bia-beta.up.railway.app/api/listas/municipios/?cod_departamento=${formData.cod_departamento}`);
                 const resultado = await respuesta.json();
@@ -120,7 +123,19 @@ export default function Agregar_univercidad() {
         cargarDepartamentos();
     }, [formData.cod_departamento]);
 
-
+    const styles = {
+        bienvenido: {
+            color: 'skyblue', // Color azul cielo para el título
+            fontWeight: 'bold', // Negrita para destacar
+            fontSize: '24px', // Tamaño grande para el título
+            marginBottom: '20px', // Espacio debajo del título
+        },
+        contenido: {
+            fontSize: '16px', // Tamaño adecuado para el texto
+            color: 'black', // Color para el texto
+            lineHeight: '1.6', // Espaciado de línea para mejor lectura
+        }
+    };
     return (
         <>
             <Grid container
@@ -132,128 +147,71 @@ export default function Agregar_univercidad() {
                         className={`border px-4 text-white fs-5 p-1`}
                         sx={titulo}
                     >
-                        <Typography>Agregar coleguio  </Typography>
+                        <Typography>Imagenes De Historia  </Typography>
                     </Box>
                 </Grid>
 
 
-                <Grid item xs={12} sm={3}>
-                    <TextField
-                     InputProps={{
-                        style: { borderRadius: 50 } // Aquí puedes ajustar el valor según tus necesidades
-                    }}
-                    color="warning"
-                        variant="outlined"
-                        size="small"
-                        required
-                        fullWidth
-                        label="Nombre colegio"
-                        name="nombre_colegio"
-                        value={formData.nombre_colegio}
-                        onChange={handleInputChange}
-                    />
+
+                <Grid item xs={12} sm={5}> 
+                    <Typography style={styles.bienvenido}>
+                    Historia 1
+                    </Typography>
+                    <Imagenes1 />
                 </Grid>
 
-                <Grid item xs={12} sm={3}>
-                    <TextField
-                     InputProps={{
-                        style: { borderRadius: 50 } // Aquí puedes ajustar el valor según tus necesidades
-                    }}
-                    color="warning"
-                        variant="outlined"
-                        size="small"
-                        required
-                        fullWidth
-                        label="Direccion"
-                        name="direccion"
-                        value={formData.direccion}
-                        onChange={handleInputChange}
-                    />
+              
+                <Grid item xs={12} sm={5}> 
+                    <Typography style={styles.bienvenido}>
+                    Historia 2
+                    </Typography>
+                    <Imagenes2 />
                 </Grid>
-                <Grid item xs={12} sm={3}>
-                    <TextField
-                     InputProps={{
-                        style: { borderRadius: 50 } // Aquí puedes ajustar el valor según tus necesidades
-                    }}
-                    color="warning"
-                        variant="outlined"
-                        size="small"
-                        required
-                        fullWidth
-                        label="Telefono contacto"
-                        name="telefono_contacto"
-                        value={formData.telefono_contacto}
-                        onChange={handleInputChange}
-                    />
+
+                <Grid item xs={12} sm={5}> 
+                    <Typography style={styles.bienvenido}>
+                    Historia 3
+                    </Typography>
+                    <Imagenes3 />
                 </Grid>
-                <Grid item xs={12} sm={3}>
-                    <TextField
-                     InputProps={{
-                        style: { borderRadius: 50 } // Aquí puedes ajustar el valor según tus necesidades
-                    }}
-                    color="warning"
-                        variant="outlined"
-                        size="small"
-                        required
-                        fullWidth
-                        label="Correo_electronico"
-                        name="correo_electronico"
-                        value={formData.correo_electronico}
-                        onChange={handleInputChange}
-                    />
+
+                <Grid item xs={12} sm={5}> 
+                    <Typography style={styles.bienvenido}>
+                    Historia 4
+                    </Typography>
+                    <Imagenes4 />
                 </Grid>
-                {/* {formData.cod_departamento} */}
-                <Grid item xs={12} sm={3}>
-                    <FormControl variant="outlined" size="small" required fullWidth >
-                        <InputLabel id="departamento-label">Departamento</InputLabel>
-                        <Select
-                            labelId="departamento-label"
-                            id="departamento"
-                            value={formData.cod_departamento}
-                            label="Departamento"
-                            onChange={handleInputChange}
-                            name="cod_departamento"
-                            color="warning"
-                            sx={{ borderRadius: 20 }} 
-                        >
-                            {departamentos.map((departamento) => (
-                                <MenuItem key={departamento.value} value={departamento.value}>
-                                    {departamento.label}
-                                </MenuItem>
-                            ))}
-                        </Select>
-                    </FormControl>
+
+                <Grid item xs={12} sm={5}> 
+                    <Typography style={styles.bienvenido}>
+                    Historia 5
+                    </Typography>
+                    <Imagenes5 />
+                </Grid>
+
+                <Grid item xs={12} sm={5}> 
+                    <Typography style={styles.bienvenido}>
+                    Historia 6
+                    </Typography>
+                    <Imagenes6 />
+                </Grid>
+
+                <Grid item xs={12} sm={5}> 
+                    <Typography style={styles.bienvenido}>
+                    Historia 7
+                    </Typography>
+                    <Imagenes7 />
+                </Grid>
+
+                <Grid item xs={12} sm={5}> 
+                    <Typography style={styles.bienvenido}>
+                    Historia 8
+                    </Typography>
+                    <Imagenes8 />
                 </Grid>
 
 
-                <Grid item xs={12} sm={3}>
-                    <FormControl variant="outlined" size="small" required fullWidth >
-                        <InputLabel  >Municipio</InputLabel>
-                        <Select
-                            // labelId="departamento-label"
-                            // id="departamento"
-                            value={formData.cod_municipio}
-                            label="Departamento"
-                            onChange={handleInputChange}
-                            name="cod_municipio"
-                            color="warning"
-                            sx={{ borderRadius: 20 }} 
-                        >
-                            {municipio.map((municipio) => (
-                                <MenuItem key={municipio.value} value={municipio.value}>
-                                    {municipio.label}
-                                </MenuItem>
-                            ))}
-                        </Select>
-                    </FormControl>
-                </Grid>
 
-                <Grid item xs={12} sm={3}>
-                    <Button color='success' fullWidth startIcon={<SaveIcon />}
-                        variant='contained' onClick={handleSubmit}  sx={{ borderRadius: 20 }}  >
-                        Guardar Estudiante
-                    </Button>
-                </Grid>
 
             </Grid>
         </>

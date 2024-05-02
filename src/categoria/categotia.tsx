@@ -7,6 +7,7 @@ import SaveIcon from '@mui/icons-material/Save';
 // import { control_success } from "../commons/alertas";
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 import { useSnackbar } from 'notistack';
+import { ImagenPortad3, ImagenPortad4, ImagenPortad5, ImagenPortad6, ImagenPortad7, ImagenPortad8, ImagenPortad9, ImagenPortada, ImagenPortada2 } from "../Drawer/Cuento3";
 
 
 interface Colegio {
@@ -108,7 +109,7 @@ export default function Categoria() {
 
     const handleChange = (event: { target: { value: string; }; }) => {
         const value = event.target.value as string;
-        setFormData({ ...formData, colegio : value });
+        setFormData({ ...formData, colegio: value });
         setColegioSeleccionado(value);
     };
     return (
@@ -118,220 +119,85 @@ export default function Categoria() {
                 sx={miEstilo}
             >
 
+
                 <Grid item xs={12} sm={12}>
                     <Box
                         className={`border px-4 text-white fs-5 p-1`}
                         sx={titulo}
                     >
-                        <Typography>Estudiantes  </Typography>
+                        <Typography>El resplandor de la cordillera : una historia de esperanza y renacimiento   </Typography>
                     </Box>
                 </Grid>
 
 
+                <Grid item  >
 
-                <Grid item xs={12} sm={3}>
-                    <TextField
-                        variant="outlined"
-                        size="small"
-                        required
-                        fullWidth
-                        label="numero identidad"
-                        name="numero_identidad"
-                        value={formData.numero_identidad}
-                        onChange={handleInputChange}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={3}>
-                    <TextField
-                        variant="outlined"
-                        size="small"
-                        required
-                        fullWidth
-                        label="Primer Nombre"
-                        name="primer_nombre"
-                        value={formData.primer_nombre}
-                        onChange={handleInputChange}
-                    />
+                    <ImagenPortada />
                 </Grid>
 
 
-                <Grid item xs={12} sm={3}>
-                    <TextField
-                        variant="outlined"
-                        size="small"
-                        required
-                        fullWidth
-                        label="segundo nombre"
-                        name="segundo_nombre"
-                        value={formData.segundo_nombre}
-                        onChange={handleInputChange}
-                    />
+                <Grid item  >
+
+                    <ImagenPortada2 />
                 </Grid>
 
 
-                <Grid item xs={12} sm={3}>
-                    <TextField
-                        variant="outlined"
-                        size="small"
-                        required
-                        fullWidth
-                        label="primer apellido"
-                        name="primer_apellido"
-                        value={formData.primer_apellido}
-                        onChange={handleInputChange}
-                    />
-                </Grid>
-                <Grid item xs={12} sm={3}>
-                    <TextField
-                        variant="outlined"
-                        size="small"
-                        required
-                        fullWidth
-                        label="segundo apellido"
-                        name="segundo_apellido"
-                        value={formData.segundo_apellido}
-                        onChange={handleInputChange}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={3}>
-                    <TextField
-                        variant="outlined"
-                        size="small"
-                        required
-                        fullWidth
-                        label="edad"
-                        name="edad"
-                        value={formData.edad}
-                        onChange={handleInputChange}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={3}>
-                    <TextField
-                        variant="outlined"
-                        size="small"
-                        required
-                        fullWidth
-                        label="fecha nacimiento"
-                        name="fecha_nacimiento"
-                        value={formData.fecha_nacimiento}
-                        onChange={handleInputChange}
-                    />
-                </Grid>
-                <Grid item xs={12} sm={3}>
-                    <TextField
-                        variant="outlined"
-                        size="small"
-                        required
-                        fullWidth
-                        label="correo electronico"
-                        name="correo_electronico"
-                        value={formData.correo_electronico}
-                        onChange={handleInputChange}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={3}>
-                    <TextField
-                        variant="outlined"
-                        size="small"
-                        required
-                        fullWidth
-                        label="Numero celular"
-                        name="numero_celular"
-                        value={formData.numero_celular}
-                        onChange={handleInputChange}
-                    />
-                </Grid>
-                {/* Agrega más campos del formulario según sea necesario */}
-                {/* <>{colegioSeleccionado}</> */}
-                <Grid item xs={12} sm={3}>
-                    <FormControl variant="outlined" size="small" required fullWidth>
-                        <InputLabel id="pertenece-colegio-label">¿Pertenece al colegio?</InputLabel>
-                        <Select
-                            labelId="pertenece-colegio-label"
-                            id="pertenece-colegio"
-                            label="¿Pertenece al colegio?"
-                            name="pertenece_colegio"
-                            value={formData.pertenece_colegio}
-                            onChange={handleInputChange}
-                        >
-                            <MenuItem value={"true"}>Sí</MenuItem>
-                            <MenuItem value={"false"}>No</MenuItem>
-                        </Select>
-                    </FormControl>
-                </Grid>
-
-                <Grid item xs={12} sm={3}>
-                    <FormControl variant="outlined" size="small" required fullWidth>
-                        <InputLabel id="pertenece-colegio-label">¿pertenece universidad?</InputLabel>
-                        <Select
-                            labelId=" pertenece universidad"
-                            label="¿pertenece universidad?"
-                            name="pertenece_universidad"
-                            value={formData.pertenece_universidad}
-                            onChange={handleInputChange}
-                        >
-                            <MenuItem value={"true"}>Sí</MenuItem>
-                            <MenuItem value={"false"}>No</MenuItem>
-                        </Select>
-                    </FormControl>
+                <Grid item  > 
+                    <ImagenPortad3 />
                 </Grid>
 
 
-                <Grid item xs={12} sm={3}>
-                    <FormControl variant="outlined" size="small" required fullWidth>
-                        <InputLabel id="colegio-label">Colegio</InputLabel>
-                        <Select
-                            labelId="colegio-label"
-                            id="colegio"
-                            value={formData.colegio}
-                            label="colegio"
 
-                            onChange={handleChange}
-                        >
-                            {colegios.map((colegio) => (
-                                <MenuItem key={colegio.id} value={colegio.id}>
-                                    {colegio.nombre_colegio}
-                                </MenuItem>
-                            ))}
-                        </Select>
-                    </FormControl>
+
+                <Grid item  > 
+                    <ImagenPortad4 />
                 </Grid>
 
-
-                {/* <Grid item xs={12} sm={3}>
-                    <TextField
-                        variant="outlined"
-                        size="small"
-                        required
-                        fullWidth
-                        label="colegio"
-                        name="colegio"
-                        value={formData.colegio}
-                        onChange={handleInputChange}
-                    />
-                </Grid> */}
-                {/* <Grid item xs={12} sm={3}>
-                    <TextField
-                        variant="outlined"
-                        size="small"
-                        required
-                        fullWidth
-                        label="id grado"
-                        name="id_grado"
-                        value={formData.id_grado}
-                        onChange={handleInputChange}
-                    />
-                </Grid> */}
-                <Grid item xs={12} sm={3}>
-                    <Button color='success' fullWidth startIcon={<SaveIcon />}
-                        variant='contained' onClick={handleSubmit}>
-                        Guardat Estudiante
-                    </Button>
+                <Grid item  > 
+                    <ImagenPortad5 />
                 </Grid>
+
+                <Grid item  > 
+                    <ImagenPortad6 />
+                </Grid>
+
+                <Grid item  > 
+                    <ImagenPortad7 />
+                </Grid>
+
+                <Grid item  > 
+                    <ImagenPortad8 />
+                </Grid>
+
+                <Grid item  > 
+                    <ImagenPortad9 />
+                </Grid>
+
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             </Grid>
         </>

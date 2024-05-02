@@ -28,8 +28,7 @@ import { useState } from "react";
 
 
 const drawerWidth = 240;
-const links = ["Home", "Estudiantes", "Agregar_colegio", "Consultar_Coleguios"
-  ,]
+const links = ["Home", "Se_libre", "Reflexión", "Imagenes", "resplandor ", "Videos",]
 
 const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })<{
   open?: boolean;

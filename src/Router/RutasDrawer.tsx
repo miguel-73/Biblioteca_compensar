@@ -21,7 +21,7 @@ export default function RutasDrawer() {
                     element={<Home />}
                 />
                 <Route
-                    path={"/Estudiantes"}
+                    path={"/Se_libre"}
                     element={<Estudiantes />}
                 />
                 <Route
@@ -29,23 +29,23 @@ export default function RutasDrawer() {
                     element={<ConsultarEstudiante />}
                 />
                 <Route
-                    path={"/Agregar_colegio"}
+                    path={"/Imagenes"}
                     element={<Agregar_univercidad />}
                 />
 
                 <Route
-                    path={"/Consultar_Coleguios"}
+                    path={"/Reflexión"}
                     element={<Consultar_Coleguios />}
                 />
                 <Route
-                    path={"/categotia"}
+                    path={"/resplandor"}
                     element={<Categotia />}
                 />
 
 
 
                 <Route
-                    path={"/Inicio"}
+                    path={"/Videos"}
                     element={<FotoPerfilStudiante />}
                 />
                 <Route

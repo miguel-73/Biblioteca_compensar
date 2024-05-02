@@ -26,7 +26,7 @@ export default function Home() {
         mb: '20px',
         boxShadow: '0px 3px 6px #042F4A26',
     };
-   
+
 
 
     return (
@@ -41,15 +41,37 @@ export default function Home() {
                 spacing={2} m={2} p={2}
                 sx={miEstilo}
             >
-
                 <Grid item xs={12} sm={4}>
                     <Card sx={{ minWidth: 275 }}>
                         <CardContent>
                             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                                Ing en sistemas
+                               Ingeniería De Sistemas
                             </Typography>
                             <Typography variant="h5" component="div">
-                                Jhon Fredy Bermudez Rivera
+                                Miguel Angel Murcia Ocampo
+                            </Typography>
+                            <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                                Desarrollador front end y lider en desarrollo 
+                            </Typography>
+                            <Typography variant="body2">
+                                Diseño Web
+                                <br />
+                                {/* {'"a benevolent smile"'} */}
+                            </Typography>
+                        </CardContent>
+                        <CardActions>
+                            <Button size="small">Estudiante</Button>
+                        </CardActions>
+                    </Card>
+                </Grid>
+                <Grid item xs={12} sm={4}>
+                    <Card sx={{ minWidth: 275 }}>
+                        <CardContent>
+                            <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                               Ingeniería De Sistemas
+                            </Typography>
+                            <Typography variant="h5" component="div">
+                            German Andres Herrera Acosta
                             </Typography>
                             <Typography sx={{ mb: 1.5 }} color="text.secondary">
                                 Modelado de Datos
@@ -73,16 +95,16 @@ export default function Home() {
                     <Card sx={{ minWidth: 275 }}>
                         <CardContent>
                             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                                Ing en sistemas
+                               Ingeniería De Sistemas
                             </Typography>
                             <Typography variant="h5" component="div">
-                                Hector Stiven Vigoya
+                            Héctor Stiven Vigoya Mestra
                             </Typography>
                             <Typography sx={{ mb: 1.5 }} color="text.secondary">
                                 Back
                             </Typography>
                             <Typography variant="body2">
-                                server-side
+                               Server-Side
                                 <br />
                                 {/* {'"a benevolent smile"'} */}
                             </Typography>
@@ -96,22 +118,70 @@ export default function Home() {
 
 
 
+                <Grid item xs={12} sm={4}>
+                    <Card sx={{ minWidth: 275 }}>
+                        <CardContent>
+                            <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                               Ingeniería De Sistemas
+                            </Typography>
+                            <Typography variant="h5" component="div">
+                               Maria daniela gallego 
+                            </Typography>
+                            <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                                Back
+                            </Typography>
+                            <Typography variant="body2">
+                               Server-Side
+                                <br />
+                                {/* {'"a benevolent smile"'} */}
+                            </Typography>
+                        </CardContent>
+                        <CardActions>
+                            <Button size="small" >Estudiante</Button>
+                        </CardActions>
+                    </Card>
+                </Grid>
 
                 <Grid item xs={12} sm={4}>
                     <Card sx={{ minWidth: 275 }}>
                         <CardContent>
                             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                                Ing en sistemas
+                               Ingeniería De Sistemas
                             </Typography>
                             <Typography variant="h5" component="div">
-                                Miguel Angel Murcia Ocampo
+                            Daniel Alejandro Ospina Camargo
                             </Typography>
                             <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                                Desarrollador front end
+                                Modelado de datos 
                             </Typography>
                             <Typography variant="body2">
-                                Diseño Web
+                               Server-Side
                                 <br />
+                                {/* {'"a benevolent smile"'} */}
+                            </Typography>
+                        </CardContent>
+                        <CardActions>
+                            <Button size="small" >Estudiante</Button>
+                        </CardActions>
+                    </Card>
+                </Grid>
+
+                <Grid item xs={12} sm={4}>
+                    <Card sx={{ minWidth: 275 }}>
+                        <CardContent>
+                            <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                               Ingeniería De Sistemas
+                            </Typography>
+                            <Typography variant="h5" component="div">
+                            Andrés Mauricio Alférez Valderrama 
+                            </Typography>
+                            <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                                Modelado de Datos
+                            </Typography>
+                            <Typography variant="body2">
+                                Database Design
+                                <br />
+
                                 {/* {'"a benevolent smile"'} */}
                             </Typography>
                         </CardContent>
@@ -120,6 +190,16 @@ export default function Home() {
                         </CardActions>
                     </Card>
                 </Grid>
+
+
+
+
+
+
+
+
+
+
 
             </Grid>
         </>

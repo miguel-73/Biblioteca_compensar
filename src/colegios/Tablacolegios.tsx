@@ -5,6 +5,7 @@ import { Box, Grid, TextField, Typography } from "@mui/material";
 import { miEstilo, titulo } from "../commons/interface";
 import { DataGrid } from "@mui/x-data-grid";
 import { useEffect, useState } from 'react';
+import { Reflexiones1, Reflexiones2, Reflexiones3, Reflexiones4, Reflexiones5, Reflexiones6, Reflexiones7, Reflexiones8, Reflexiones9 } from "../Drawer/Cuento3";
 
 
 interface Colegio {
@@ -21,7 +22,7 @@ export default function Consultar_Coleguios() {
 
     const fetchEstudiantes = async (): Promise<any> => {
         try {
-            const respuesta = await fetch('https://zg3gr5k0-8000.use2.devtunnels.ms/estudiantes/obtener_coleguio/');
+            const respuesta = await fetch('https://backend-bibliotecacompensar-production.up.railway.app/universidad/obtener_colegio/');
 
 
             if (respuesta.ok) {
@@ -58,6 +59,21 @@ export default function Consultar_Coleguios() {
         estudiante.correo_electronico.toLowerCase().includes(filtro.toLowerCase()) ||
         estudiante.telefono_contacto.toLowerCase().includes(filtro.toLowerCase())
     );
+
+
+    const styles = {
+        bienvenido: {
+            color: 'skyblue', // Color azul cielo para el título
+            fontWeight: 'bold', // Negrita para destacar
+            fontSize: '24px', // Tamaño grande para el título
+            marginBottom: '20px', // Espacio debajo del título
+        },
+        contenido: {
+            fontSize: '16px', // Tamaño adecuado para el texto
+            color: 'black', // Color para el texto
+            lineHeight: '1.6', // Espaciado de línea para mejor lectura
+        }
+    };
     return (
         <>  
             <Grid container
@@ -69,31 +85,69 @@ export default function Consultar_Coleguios() {
                         className={`border px-4 text-white fs-5 p-1`}
                         sx={titulo}
                     >
-                        <Typography>Colegios   </Typography>
+                        <Typography>Reflexiones </Typography>
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={3}>
-                    <TextField 
-                        fullWidth 
-                        label="Buscar por nombre o correo " 
-                        variant="outlined" 
-                        size="small"
-                        onChange={e => setFiltro(e.target.value)} 
-                        value={filtro}
-                        style={{ marginBottom: '16px' }}
-                    />
+                <Grid item xs={12} sm={5}>
+                    <Typography style={styles.bienvenido}>
+                        Reflexión 1
+                    </Typography>
+                    <Reflexiones1/>
                 </Grid>
 
 
-                <Grid item xs={12} sm={12}>
-                        <DataGrid
-                            autoHeight
-                            density="compact"
-                            rows={estudiantesFiltrados}
-                            columns={columnas}
-                        />
+                <Grid item xs={12} sm={5}>
+                    <Typography style={styles.bienvenido}>
+                        Reflexión 2
+                    </Typography>
+                    <Reflexiones2/>
                 </Grid>
+                <Grid item xs={12} sm={5}>
+                    <Typography style={styles.bienvenido}>
+                        Reflexión 3
+                    </Typography>
+                    <Reflexiones3/>
+                </Grid>
+
+                  <Grid item xs={12} sm={5}>
+                    <Typography style={styles.bienvenido}>
+                        Reflexión 4
+                    </Typography>
+                    <Reflexiones4/>
+                </Grid>
+                <Grid item xs={12} sm={5}>
+                    <Typography style={styles.bienvenido}>
+                        Reflexión 5
+                    </Typography>
+                    <Reflexiones5/>
+                </Grid>
+                <Grid item xs={12} sm={5}>
+                    <Typography style={styles.bienvenido}>
+                        Reflexión 6
+                    </Typography>
+                    <Reflexiones6/>
+                </Grid>
+                <Grid item xs={12} sm={5}>
+                    <Typography style={styles.bienvenido}>
+                        Reflexión 7
+                    </Typography>
+                    <Reflexiones7/>
+                </Grid>
+                <Grid item xs={12} sm={5}>
+                    <Typography style={styles.bienvenido}>
+                        Reflexión 8
+                    </Typography>
+                    <Reflexiones8/>
+                </Grid>
+                <Grid item xs={12} sm={5}>
+                    <Typography style={styles.bienvenido}>
+                        Reflexión 9
+                    </Typography>
+                    <Reflexiones9/>
+                </Grid>
+               
+
               
 
             </Grid>

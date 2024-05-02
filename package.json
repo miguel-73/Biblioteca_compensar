@@ -34,6 +34,7 @@
     "react-scripts": "5.0.1",
     "react-toastify": "^9.1.3",
     "react-tsparticles": "^2.12.2",
+    "react-youtube": "^10.1.0",
     "styled-components": "^6.1.0",
     "sweetalert2": "^11.7.32",
     "theme-provider": "^1.0.8",
